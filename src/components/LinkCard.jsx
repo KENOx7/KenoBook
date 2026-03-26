@@ -193,7 +193,7 @@ export default function LinkCard({
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group/btn relative isolate overflow-hidden [transform:translateZ(0)] flex items-center gap-2 px-4 py-2 bg-lime-500/10 dark:bg-lime-400/10 text-lime-700 dark:text-lime-400 rounded-xl text-xs font-bold hover:text-black transition-all duration-300 ring-1 ring-lime-500/20 dark:ring-lime-400/20 shadow-sm dark:shadow-[0_0_15px_rgba(163,230,53,0.1)] hover:shadow-md dark:hover:shadow-[0_0_20px_rgba(163,230,53,0.4)]"
+            className="group/btn relative isolate overflow-hidden [transform:translateZ(0)] flex items-center gap-2 px-4 py-2 bg-lime-500/10 dark:bg-lime-400/10 text-lime-700 dark:text-lime-400 rounded-xl text-xs font-bold hover:text-black dark:hover:text-[#07070a] transition-all duration-300 ring-1 ring-lime-500/20 dark:ring-lime-400/20 shadow-sm dark:shadow-[0_0_15px_rgba(163,230,53,0.1)] hover:shadow-md dark:hover:shadow-[0_0_20px_rgba(163,230,53,0.4)]"
           >
             {/* Animasiyalı arxa fonu */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-lime-400 rounded-full origin-center scale-0 group-hover/btn:scale-100 transition-transform duration-500 ease-out z-0 pointer-events-none" />
