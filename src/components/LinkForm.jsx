@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Link2, Type, Hash, Star, X, Sparkles, Bold, Italic, Heading, List, Code, Link as LinkIcon, Edit2, Plus } from 'lucide-react';
+import { 
+  Link2, Type, Hash, Star, X, Sparkles, Bold, Italic, 
+  Heading, List, Code, Link as LinkIcon, Edit2, Plus, 
+  ChevronDown, AlertCircle 
+} from 'lucide-react';
 import { fetchAndTranslateMetadata } from '../services/metadata';
 
 const PRESET_CATEGORIES = ['GitHub', 'AI', 'Video', 'Mətn (Qeyd)', 'Digər'];
