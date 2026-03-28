@@ -170,7 +170,7 @@ export default function LinkForm({ link, onSubmit, onCancel }) {
     <div className="fixed inset-0 bg-[#0a0a0f]/80 dark:bg-[#0a0a0f]/80 backdrop-blur-xl flex items-center justify-center z-50 p-4 animate-fadeIn">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-lime-500/10 rounded-full blur-[100px] pointer-events-none" />
       
-      <div className="bg-white/90 dark:bg-[#121216]/90 border border-black/10 dark:border-white/[0.08] rounded-[32px] w-full max-w-2xl shadow-2xl dark:shadow-[0_0_80px_rgba(0,0,0,0.8)] animate-slideUp relative overflow-hidden ring-1 ring-inset ring-black/5 dark:ring-white/5 backdrop-blur-3xl">
+      <div className="flex flex-col max-h-[90vh] bg-white/90 dark:bg-[#121216]/90 border border-black/10 dark:border-white/[0.08] rounded-[32px] w-full max-w-2xl shadow-2xl dark:shadow-[0_0_80px_rgba(0,0,0,0.8)] animate-slideUp relative overflow-hidden ring-1 ring-inset ring-black/5 dark:ring-white/5 backdrop-blur-3xl">
         <div className="flex items-center justify-between p-6 sm:p-8 border-b border-black/5 dark:border-white/[0.04]">
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-lime-400/20 dark:bg-lime-500/10 flex items-center justify-center ring-1 ring-lime-400/30 dark:ring-lime-500/20 shadow-[0_0_15px_rgba(163,230,53,0.2)]">
@@ -274,8 +274,8 @@ export default function LinkForm({ link, onSubmit, onCancel }) {
                 )}
               </label>
               
-              <div className="relative group/editor">
-                <div className="absolute top-0 inset-x-0 h-11 bg-slate-100 dark:bg-[#07070a] border border-b border-black/10 dark:border-white/5 rounded-t-2xl flex items-center px-4 gap-2 z-10 transition-colors">
+              <div className="relative group/editor flex flex-col bg-slate-50 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl overflow-hidden focus-within:ring-2 focus-within:ring-lime-500/50 focus-within:border-lime-500/50 transition-all shadow-inner dark:shadow-none">
+                <div className="bg-slate-100 dark:bg-[#07070a] border-b border-black/10 dark:border-white/5 flex items-center px-4 py-2 gap-2 z-10 transition-colors">
                   <button type="button" onClick={() => insertMarkdown('**', '**')} className="p-1.5 text-slate-500 dark:text-white/40 hover:text-lime-600 dark:hover:text-lime-300 hover:bg-lime-500/10 dark:hover:bg-lime-400/10 rounded-md transition-all duration-300" title="Qalın yazı"><Bold className="w-3.5 h-3.5" /></button>
                   <button type="button" onClick={() => insertMarkdown('*', '*')} className="p-1.5 text-slate-500 dark:text-white/40 hover:text-lime-600 dark:hover:text-lime-300 hover:bg-lime-500/10 dark:hover:bg-lime-400/10 rounded-md transition-all duration-300" title="Maili (Italic)"><Italic className="w-3.5 h-3.5" /></button>
                   <div className="w-[1px] h-3.5 bg-black/10 dark:bg-white/10 mx-1" />
@@ -290,16 +290,9 @@ export default function LinkForm({ link, onSubmit, onCancel }) {
                   id="markdown-editor"
                   value={formData.description}
                   onChange={(e) => setFormData(prev => ({ ...prev, description: e.target.value }))}
-                  className="w-full h-32 bg-slate-50 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl pt-14 pb-4 px-5 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-white/20 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:border-lime-500/50 transition-all resize-none shadow-inner dark:shadow-none text-[14px] leading-relaxed [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:bg-black/10 dark:[&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full"
+                  className="w-full h-32 bg-transparent p-5 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-white/20 focus:outline-none resize-none text-[14px] leading-relaxed [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:bg-black/10 dark:[&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full"
                   placeholder={isNote ? "Qeydinizi bura yazın... (Markdown dəstəklənir)" : "Nə üçün saxlayırsınız? (Markdown dəstəklənir)"}
                 />
-                {isNote && (
-                  <div className="absolute top-4 right-4 z-20">
-                    <span className="text-[10px] font-bold tracking-widest uppercase px-2 py-1 bg-lime-500/10 text-lime-600 dark:text-lime-400 rounded-md border border-lime-500/20">
-                      Markdown Düymələri
-                    </span>
-                  </div>
-                )}
               </div>
               {errors.description && (
                 <p className="flex items-center gap-1.5 text-red-500 dark:text-red-400 text-sm mt-2 ml-1 font-medium bg-red-500/10 py-1.5 px-3 rounded-lg border border-red-500/20 max-w-max">
