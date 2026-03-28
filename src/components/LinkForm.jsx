@@ -56,6 +56,18 @@ export default function LinkForm({ link, onSubmit, onCancel }) {
     }
   }, [isNote, errors.url]);
 
+  const activeTab = isNote ? 'text' : 'link';
+
+  const handleTabSwitch = (tab) => {
+    if (tab === 'text') {
+      setFormData((prev) => ({ ...prev, category: 'Mətn (Qeyd)', url: '' }));
+      setUseCustom(false);
+      setCustomCategory('');
+    } else {
+      setFormData((prev) => ({ ...prev, category: 'GitHub' }));
+    }
+  };
+
   const validate = () => {
     const newErrors = {};
     if (!formData.title.trim()) newErrors.title = 'Başlıq tələb olunur';
